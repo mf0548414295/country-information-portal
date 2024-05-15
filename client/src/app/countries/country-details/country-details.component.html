@@ -1,0 +1,33 @@
+<div class="details-container">
+  <h1 [innerText]="selectedCountry?.name?.common + '\'s Details'"></h1>
+    <img [src]="selectedCountry?.flags?.png" class="flag" />
+    <form
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+      class="form-container"
+    >
+      <mat-form-field class="mat-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput [value]="selectedCountry?.name?.common" disabled />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Region</mat-label>
+        <input matInput [value]="selectedCountry?.region" disabled />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>SubRegion</mat-label>
+        <input matInput [value]="selectedCountry?.subRegion" disabled />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Capital</mat-label>
+        <input matInput formControlName="capital" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Population</mat-label>
+        <input type="number" matInput formControlName="population" required />
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="!profileForm.valid">
+        Submit
+      </button>
+    </form>
+</div>

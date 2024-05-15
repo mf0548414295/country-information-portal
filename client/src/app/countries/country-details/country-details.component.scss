@@ -1,0 +1,38 @@
+.details-container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+}
+
+
+.flag {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.form-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}

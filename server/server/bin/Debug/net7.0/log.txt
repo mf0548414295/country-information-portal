@@ -1,0 +1,472 @@
+2024-05-12 14:01:52,460 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:02:05,677 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:02:07,435 [17] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c3849
+2024-05-12 14:02:07,449 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:09:39,917 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:15:56,927 [16] INFO  server.Logger [(null)] - An error occurred: MongoDB.Bson.BsonSerializationException: An error occurred while serializing the Id property of class repository.Models.CountryModel: 'string' is not a valid 24 digit hex string.
+ ---> System.FormatException: 'string' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, String value)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeNormalMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeClass(BsonSerializationContext context, BsonSerializationArgs args, TClass document)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TClass value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, BsonDocumentWrapper value)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TBsonValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TBsonValue value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize[TValue](IBsonSerializer`1 serializer, BsonSerializationContext context, TValue value)
+   at MongoDB.Driver.Core.Operations.RetryableUpdateCommandOperation.UpdateRequestSerializer.SerializeUpdate(BsonSerializationContext context, BsonSerializationArgs args, UpdateRequest request)
+   at MongoDB.Driver.Core.Operations.RetryableUpdateCommandOperation.UpdateRequestSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, UpdateRequest value)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteType1Section(BsonBinaryWriter writer, Type1CommandMessageSection section, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteSection(BsonBinaryWriter writer, CommandMessageSection section, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteSections(BsonBinaryWriter writer, IEnumerable`1 sections, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteMessage(CommandMessage message)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandRequestMessageBinaryEncoder.WriteMessage(CommandRequestMessage message)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandRequestMessageBinaryEncoder.MongoDB.Driver.Core.WireProtocol.Messages.Encoders.IMessageEncoder.WriteMessage(MongoDBMessage message)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.SendMessagesHelper.EncodeMessages(CancellationToken cancellationToken, List`1& sentMessages)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.PooledConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.AcquiredConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.ConnectionExtensions.SendMessage(IConnection connection, RequestMessage message, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.SendMessageAndProcessResponse(CommandRequestMessage message, Int32 responseTo, IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.Execute(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.Execute(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocol[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.Command[TResult](ICoreSession session, ReadPreference readPreference, DatabaseNamespace databaseNamespace, BsonDocument command, IEnumerable`1 commandPayloads, IElementNameValidator commandValidator, BsonDocument additionalOptions, Action`1 postWriteAction, CommandResponseHandling responseHandling, IBsonSerializer`1 resultSerializer, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteCommandOperationBase.ExecuteAttempt(RetryableWriteContext context, Int32 attempt, Nullable`1 transactionNumber, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteOperationExecutor.Execute[TResult](IRetryableWriteOperation`1 operation, RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.ExecuteBatch(RetryableWriteContext context, Batch batch, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.ExecuteBatches(RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.Execute(RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.ExecuteBatch(RetryableWriteContext context, Batch batch, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.Execute(IWriteBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteWriteOperation[TResult](IWriteBinding binding, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteWriteOperation[TResult](IClientSessionHandle session, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass30_0.<BulkWrite>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.<>c__DisplayClass92_0.<ReplaceOne>b__0(IEnumerable`1 requests, BulkWriteOptions bulkWriteOptions)
+   at MongoDB.Driver.MongoCollectionBase`1.ReplaceOne(FilterDefinition`1 filter, TDocument replacement, ReplaceOptions options, Func`3 bulkWrite)
+   at MongoDB.Driver.MongoCollectionBase`1.ReplaceOne(FilterDefinition`1 filter, TDocument replacement, ReplaceOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.IMongoCollectionExtensions.ReplaceOne[TDocument](IMongoCollection`1 collection, Expression`1 filter, TDocument replacement, ReplaceOptions options, CancellationToken cancellationToken)
+   at repository.Services.CountryService.UpdateCountry(CountryModel country, String countryId) in C:\Users\User\Desktop\cSharp & Angular\server\repository\Services\CountryService.cs:line 18
+   at server.Controllers.CountryController.UpdateCountry(CountryModel country, String countryId) in C:\Users\User\Desktop\cSharp & Angular\server\server\Controllers\CountryController.cs:line 36
+2024-05-12 14:16:32,526 [5] INFO  server.Logger [(null)] - An error occurred: MongoDB.Bson.BsonSerializationException: An error occurred while serializing the Id property of class repository.Models.CountryModel: 'string' is not a valid 24 digit hex string.
+ ---> System.FormatException: 'string' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, String value)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeNormalMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeMember(BsonSerializationContext context, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.SerializeClass(BsonSerializationContext context, BsonSerializationArgs args, TClass document)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TClass value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, BsonDocumentWrapper value)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TBsonValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TBsonValue value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize[TValue](IBsonSerializer`1 serializer, BsonSerializationContext context, TValue value)
+   at MongoDB.Driver.Core.Operations.RetryableUpdateCommandOperation.UpdateRequestSerializer.SerializeUpdate(BsonSerializationContext context, BsonSerializationArgs args, UpdateRequest request)
+   at MongoDB.Driver.Core.Operations.RetryableUpdateCommandOperation.UpdateRequestSerializer.SerializeValue(BsonSerializationContext context, BsonSerializationArgs args, UpdateRequest value)
+   at MongoDB.Bson.Serialization.Serializers.SealedClassSerializerBase`1.Serialize(BsonSerializationContext context, BsonSerializationArgs args, TValue value)
+   at MongoDB.Bson.Serialization.Serializers.SerializerBase`1.MongoDB.Bson.Serialization.IBsonSerializer.Serialize(BsonSerializationContext context, BsonSerializationArgs args, Object value)
+   at MongoDB.Bson.Serialization.IBsonSerializerExtensions.Serialize(IBsonSerializer serializer, BsonSerializationContext context, Object value)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteType1Section(BsonBinaryWriter writer, Type1CommandMessageSection section, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteSection(BsonBinaryWriter writer, CommandMessageSection section, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteSections(BsonBinaryWriter writer, IEnumerable`1 sections, Int64 messageStartPosition)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandMessageBinaryEncoder.WriteMessage(CommandMessage message)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandRequestMessageBinaryEncoder.WriteMessage(CommandRequestMessage message)
+   at MongoDB.Driver.Core.WireProtocol.Messages.Encoders.BinaryEncoders.CommandRequestMessageBinaryEncoder.MongoDB.Driver.Core.WireProtocol.Messages.Encoders.IMessageEncoder.WriteMessage(MongoDBMessage message)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.SendMessagesHelper.EncodeMessages(CancellationToken cancellationToken, List`1& sentMessages)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.PooledConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.ConnectionPools.ExclusiveConnectionPool.AcquiredConnection.SendMessages(IEnumerable`1 messages, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.ConnectionExtensions.SendMessage(IConnection connection, RequestMessage message, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.SendMessageAndProcessResponse(CommandRequestMessage message, Int32 responseTo, IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandUsingCommandMessageWireProtocol`1.Execute(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.WireProtocol.CommandWireProtocol`1.Execute(IConnection connection, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.ExecuteProtocol[TResult](IWireProtocol`1 protocol, ICoreSession session, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.Server.ServerChannel.Command[TResult](ICoreSession session, ReadPreference readPreference, DatabaseNamespace databaseNamespace, BsonDocument command, IEnumerable`1 commandPayloads, IElementNameValidator commandValidator, BsonDocument additionalOptions, Action`1 postWriteAction, CommandResponseHandling responseHandling, IBsonSerializer`1 resultSerializer, MessageEncoderSettings messageEncoderSettings, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteCommandOperationBase.ExecuteAttempt(RetryableWriteContext context, Int32 attempt, Nullable`1 transactionNumber, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteOperationExecutor.Execute[TResult](IRetryableWriteOperation`1 operation, RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.ExecuteBatch(RetryableWriteContext context, Batch batch, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.ExecuteBatches(RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkUnmixedWriteOperationBase`1.Execute(RetryableWriteContext context, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.ExecuteBatch(RetryableWriteContext context, Batch batch, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.Execute(IWriteBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteWriteOperation[TResult](IWriteBinding binding, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteWriteOperation[TResult](IClientSessionHandle session, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass30_0.<BulkWrite>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.<>c__DisplayClass92_0.<ReplaceOne>b__0(IEnumerable`1 requests, BulkWriteOptions bulkWriteOptions)
+   at MongoDB.Driver.MongoCollectionBase`1.ReplaceOne(FilterDefinition`1 filter, TDocument replacement, ReplaceOptions options, Func`3 bulkWrite)
+   at MongoDB.Driver.MongoCollectionBase`1.ReplaceOne(FilterDefinition`1 filter, TDocument replacement, ReplaceOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.IMongoCollectionExtensions.ReplaceOne[TDocument](IMongoCollection`1 collection, Expression`1 filter, TDocument replacement, ReplaceOptions options, CancellationToken cancellationToken)
+   at repository.Services.CountryService.UpdateCountry(CountryModel country, String countryId) in C:\Users\User\Desktop\cSharp & Angular\server\repository\Services\CountryService.cs:line 18
+   at server.Controllers.CountryController.UpdateCountry(CountryModel country, String countryId) in C:\Users\User\Desktop\cSharp & Angular\server\server\Controllers\CountryController.cs:line 36
+2024-05-12 14:16:46,361 [18] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c3849
+2024-05-12 14:23:03,456 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:09,971 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:17,949 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:33,957 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:43,651 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:46,779 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:48,382 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:23:49,630 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:07,289 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:09,405 [16] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:10,857 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:29,842 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:38,505 [16] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:24:40,437 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:25:30,170 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:25:33,915 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:26:13,272 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:26:28,838 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:26:37,091 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:26:44,135 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:02,746 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:16,437 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:24,331 [22] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:29,016 [16] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:30,356 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:27:37,379 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:28:04,218 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:28:31,142 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:28:40,942 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:30:54,728 [16] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:31:12,012 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:31:14,889 [16] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:31:23,228 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:32:01,272 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:32:35,994 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:32:59,620 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:33:18,768 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:33:45,190 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:33:51,308 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:34:02,941 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:37:07,286 [10] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:37:44,933 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:39:36,144 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:39:40,988 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:40:39,245 [10] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:40:52,910 [10] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:05,645 [10] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:11,922 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:14,884 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:24,352 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:31,099 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:32,709 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:37,826 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:39,357 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:40,692 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:42:48,200 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-12 14:48:33,390 [10] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:05:55,889 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:10:54,463 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:10:56,019 [19] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:12:44,208 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:12:55,214 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:13:07,159 [19] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:13:36,986 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:16:05,296 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:16:10,040 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:17:16,273 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:18:32,337 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:19:02,947 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:19:51,215 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:20:17,348 [35] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:20:39,129 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:20:47,724 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:21:01,642 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:21:02,525 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:22:35,179 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:22:43,537 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:22:58,367 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:23:04,202 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:23:11,256 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:23:42,428 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:23:54,612 [35] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:24:01,179 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:24:21,850 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:24:26,262 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:25:40,276 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:26:16,842 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:34:35,414 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:51:53,040 [30] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:52:22,556 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:52:29,805 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:52:31,370 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:52:33,220 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:52:40,293 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:55:40,208 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:55:46,751 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:55:48,840 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:55:54,313 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:56:23,926 [31] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:56:24,723 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:56:31,395 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:58:06,335 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:59:09,256 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 10:59:11,385 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:01:16,157 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:01:19,497 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:02:31,639 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:04:26,511 [25] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:05:23,475 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:06:23,461 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:06:25,635 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:06:27,420 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:06:32,472 [23] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:06:41,714 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:07:03,158 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:07:04,714 [15] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:07:37,782 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:07:49,794 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:07:53,904 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:08:44,969 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:09:27,605 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:09:29,276 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:09:30,866 [18] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384b
+2024-05-15 11:09:30,879 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:09:41,957 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:10:20,071 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:10:26,079 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:16:42,801 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:16:44,573 [10] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 11:16:44,594 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:16:50,829 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:16:51,971 [7] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384b
+2024-05-15 11:16:51,985 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:17:49,293 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:17:55,582 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:17:59,553 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:18:19,355 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:18:19,945 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:18:53,329 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:19:58,067 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:09,863 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:14,588 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:20,048 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:28,062 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:29,115 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:21:39,037 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:22:10,467 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:22:14,576 [29] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:22:22,735 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:22:23,667 [24] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 11:22:23,677 [7] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:23:48,010 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:24:05,434 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:24:11,315 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:25:18,627 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:25:24,879 [32] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:25:27,863 [17] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 11:25:27,873 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:26:20,130 [32] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:26:24,840 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:26:26,967 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:26:41,017 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:26:58,200 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:27:11,058 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:27:23,216 [32] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:27:28,752 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:27:32,950 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:27:55,936 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:28:10,553 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:28:17,946 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:28:35,136 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:28:46,417 [27] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:28:54,876 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:29:17,970 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:29:20,127 [33] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 11:29:20,136 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:30:12,283 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:30:30,115 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:30:56,767 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:31:25,635 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:31:30,071 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:31:41,367 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:31:43,016 [3] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 11:31:43,026 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:32:27,353 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:32:40,547 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:32:50,245 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:32:54,376 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:33:03,126 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:33:06,978 [34] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:33:20,419 [33] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:33:24,717 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:33:31,667 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:38:02,753 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:38:09,478 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:38:19,988 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:39:12,058 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:39:14,914 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:39:35,972 [20] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:39:37,113 [20] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:40:14,763 [3] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:40:21,395 [25] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:40:42,004 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:48:00,370 [24] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:49:50,378 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:50:30,891 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:50:41,022 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:50:44,947 [36] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:50:48,218 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:51:32,952 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:51:37,473 [39] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:52:09,943 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:52:45,880 [40] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:53:13,943 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:53:23,926 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:53:32,820 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:53:37,849 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:53:48,528 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:57:24,337 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:57:28,925 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:57:49,423 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:57:51,451 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:00,620 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:05,416 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:15,589 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:21,962 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:26,688 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:33,600 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:38,424 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:45,665 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:58:51,452 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:08,829 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:15,969 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:32,757 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:38,104 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:40,828 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:45,713 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:48,895 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:51,830 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 11:59:54,651 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:02,593 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:05,317 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:14,825 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:18,609 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:21,433 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:26,457 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:28,257 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:00:30,931 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:00,616 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:13,769 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:22,538 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:29,710 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:47,290 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:01:54,727 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:01,154 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:08,333 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:11,940 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:19,865 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:25,131 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:28,081 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:47,998 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:02:56,695 [48] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:03:14,930 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:03:18,548 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:03:23,693 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:03:26,047 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:03:44,146 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:01,971 [48] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:05,562 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:25,813 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:29,188 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:35,808 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:42,289 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:49,535 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:04:55,979 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:05:15,099 [48] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:05:18,485 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:05:21,634 [5] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:05:29,702 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:06:18,948 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:06:42,173 [50] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:06:52,836 [50] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:01,767 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:09,121 [50] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:17,051 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:22,195 [41] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:31,511 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:37,638 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:40,912 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:07:55,541 [46] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:08:33,889 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:08:54,592 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:09:01,724 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:09:03,500 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:09:08,364 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:09:22,316 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:09:23,452 [45] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:10:15,840 [49] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:10:50,645 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:11:19,203 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:11:21,847 [40] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:11:47,667 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:12:29,909 [38] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:13:25,581 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:13:30,045 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:13:33,021 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:13:35,761 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:13:48,982 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:14:29,020 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:14:33,046 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:14:43,224 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:14:56,430 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:15:00,166 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:15:23,922 [37] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:17:06,245 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:17:21,604 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:17:38,033 [17] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:17:58,871 [25] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:18:03,649 [26] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:18:15,233 [25] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:18:27,959 [18] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:18:42,768 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:19:31,276 [18] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:19:37,943 [18] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:19:52,675 [28] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:20:14,148 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:20:24,420 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:20:55,256 [9] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 12:20:55,269 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:15,636 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:24,927 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:30,088 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:33,961 [44] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:36,137 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:39,568 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:21:45,060 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:08,900 [9] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:16,669 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:24,908 [47] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:27,364 [39] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:28,986 [36] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:22:30,223 [13] INFO  server.Logger [(null)] - countries sent to client
+2024-05-15 12:24:03,108 [13] INFO  server.Logger [(null)] - client update country: 6639cfbed32817783a9c384a
+2024-05-15 12:24:03,117 [13] INFO  server.Logger [(null)] - countries sent to client

@@ -1,0 +1,20 @@
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideState, provideStore } from '@ngrx/store';
+import { provideHttpClient } from '@angular/common/http';
+import { CountryReducer } from './states/country/country.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { CountryEffect } from './states/country/country.effect';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideStore(),
+    provideHttpClient(),
+    provideState({name:'country',reducer:CountryReducer}),
+    provideEffects(CountryEffect)
+  ],
+};
